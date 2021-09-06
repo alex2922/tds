@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: bangers;
-  src: url(/font/Bangers.ttf);
+  src: url(font/Bangers.ttf);
 }
 nav {
   height: 100vh;
@@ -73,7 +73,7 @@ nav #more {
 }
 
 .dot {
-  position: absolute;
+  position: fixed;
   left: 12vw;
   top: calc((100vh / 12) * 1 );
   transform: translateY(160%);
