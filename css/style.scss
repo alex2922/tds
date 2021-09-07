@@ -1,0 +1,436 @@
+:root{
+    --yellow : #4f7cff;
+    --body: #15191c;
+    --bg : #1b1f24;
+    --black: #000000;
+    --bgg:linear-gradient( 0deg , #0a5858, #194255);
+}
+
+
+
+*,*::after,*::before{
+
+    box-sizing: border-box;
+    margin: 0px;
+    font-family:  sans-serif;
+    //border: 1px soild red;
+}
+
+
+@font-face {
+    font-family: bangers;
+    src: url(/font/Bangers.ttf);
+
+}
+
+body{
+    height:100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+// -------------------------- here goes the error message-----------------------
+
+
+.full{
+    display: grid;
+    place-items: center;
+    height:100vh;
+    width: 100vw;
+    z-index: 1000;
+    pointer-events: none;
+    display: none;
+
+    img{
+        width:60px;
+        background: black;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+    }
+
+    p{
+        position: absolute;
+        top: 54%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 14px;
+
+
+        &.reload{
+            top: 65%;
+            color: red;
+            text-align: center;
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width: 700px) and (orientation: landscape){
+    .full{
+      display: block;
+    }
+}
+
+// -------------------------- here goes the navigation-----------------------
+
+nav{
+
+    height: 100vh;
+    width: 15vw;
+    background: var(--yellow);
+    position: fixed;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    z-index: 5;
+
+    .sec{
+        height: auto;
+        width: 90%;
+        margin:auto;
+        border-radius: 10px;
+        position: absolute;
+        display: grid;
+        place-items:center;
+        transition: all .3s ease-in-out;
+        
+        img{
+            width: 25px;
+            transform: scale(.95);
+            height: auto;
+            opacity: .3;
+            transition: all .3s ease-in-out;
+            margin: 8px 0px;
+        }
+
+        &:hover,&:active{
+            background: rgba(255, 255, 255, 0.140);
+            img{
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+        &.main{
+            img{
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+    }
+
+    #home{
+        top: calc((100vh / 12) * 1 );
+    }
+    #os{
+        top: calc((100vh / 12) * 4 );
+    }
+    #update{
+        top: calc((100vh / 12) * 5);
+    }
+    #games{
+        top: calc((100vh / 12) * 6 );
+    }
+    #software{
+        top: calc((100vh / 12) * 7 );
+    }
+    #upgrade{
+        top: calc((100vh / 12) * 8);
+    }
+    #more{
+        top: calc((100vh / 12) * 9 );
+    }
+   
+
+}
+
+
+
+
+
+
+
+
+
+// -------------------------- here goes the HOME page -----------------------
+
+
+
+
+.container{
+    background: var(--bg);
+    height: 100%;
+    width: 85vw;
+    position: absolute;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -3;
+
+    
+
+
+    .title{
+
+        width: 90%;
+        padding: 20px;
+        position: relative;
+
+        p{
+
+            font-family: bangers;
+            font-weight: 100;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-size: 50px;
+            float: left;
+            
+        }
+
+
+        .logo{
+            width: 60px;
+            padding: 5px;
+            background: black;
+            border-radius: 500px;
+            box-shadow: 0px 0px 25px rgba(11, 211, 168, 0.123);
+            position: absolute;
+            right:20px;
+        }
+        
+
+       
+    }
+
+
+    .card_about{
+        position: relative;
+        margin-top: 20px;
+        height: 60vh;
+        background: var(--body);
+        border-radius: 20px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::before{
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background:linear-gradient( 0deg , #0a5858, #194255);
+            transform: scale(0.95);
+            filter: blur(50px);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        h1{
+            color: white;
+            font-family: sans-serif;
+            text-transform: capitalize;font-size: 20px;
+            text-align: left;
+            width: 100%;
+            padding: 20px 0px 20px 20px;
+        }
+
+        .line{
+            height: 3px;
+            border-radius: 0px 50px 50px 0px;
+            background: linear-gradient( 0deg , #0a5858, #194255);
+            width: 60%;
+            position: absolute;
+            top: 50px;
+            left:0px ;
+        }
+        
+
+        img.qr{
+            width: 60%;
+            margin-top: 10px;
+        }
+
+        p{
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+            opacity: .5;
+            font-family: sans-serif;
+            font-size: 10px;
+        }
+
+        .or{
+            margin:15px;
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            p{
+                font-size: 16px;
+            }
+            .lines{
+                height:2px;
+                width: 30%;
+                background: white;
+                opacity: .3;
+                border-radius: 2px;
+                margin-top: 10px;
+            }
+
+        }
+
+        .call{
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        a{
+            text-decoration: none;
+            border-radius: 10px;
+            color: white;
+            background: black;
+            display: flex;
+            align-items: center;
+            padding: 5px 15px;
+
+
+            p{
+                font-size: 20px;
+                opacity: 1;
+                margin-top: 0px;
+
+            }
+
+            img{
+                width: 30px;
+                margin-right:10px;
+    
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+// -------------------------- here goes the GAMES page -----------------------
+
+
+.page2{
+    background: var(--bg);
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    width: 85vw;
+    overflow: hidden;
+    padding: 20px;
+    color: white;
+    font-family: sans-serif;
+
+
+    h1{
+        font-family: bangers;
+        letter-spacing: 4px;
+        font-weight: 100;
+        font-size: 50px;
+    }
+
+    .lines{
+        background: var(--bgg);
+        height: 3px;
+        width: 80%;
+        position: relative;
+        left: -20%;
+    }
+
+    p.des{
+        background: black;
+        border-radius: 20px;
+        padding: 5px 20px;
+        margin-top: 10px;
+        color: white;
+        opacity: .3;
+    }
+
+    .card_1{
+        margin-top: 50px;
+        background: black;
+        height: 80px;
+        border-radius: 20px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .title{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image:url('/img/valo.jpg');
+            background-size: cover;
+            height: 100%;
+            width: 70%;
+
+
+            p{
+                z-index: 3;
+            }
+
+            .grad{
+                height: 100%;
+                z-index: 2;
+                width: 100%;
+                position: absolute;
+                background: linear-gradient(180deg, transparent  , black);
+            }
+        }
+        .price{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #17b55b;
+            height: 100%;
+            width: 30%;
+            display: grid;
+            place-items: center;
+
+            p{
+                font-family: bangers;
+                font-size: 40px;
+                font-weight: 900;
+
+                .blur{
+                    position: absolute;
+                }
+
+
+            }
+        }
+
+    }
+
+
+
+
+}
+
+
+
+
